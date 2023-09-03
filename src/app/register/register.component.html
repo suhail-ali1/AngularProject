@@ -1,0 +1,91 @@
+<div style=" height: 100%; background-image: url('assets/loginBG.jpg') ;">
+    <div style="  display: flex; justify-content: center; padding-top: 30px; ">
+        <mat-card style="width: 100%">
+            <mat-card-header style="justify-content: center;">
+              <mat-card-title><h1>!! Register Here !!</h1> </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    <div style=" display: flex; justify-content: center; margin-top: 100px;">
+        <mat-card style="width: fit-content; width: 450px;">
+            <mat-card-header style="justify-content: center;">
+              <mat-card-title>Enter Your Details </mat-card-title>
+            </mat-card-header>
+            
+                
+
+                    <div style="display: flex; justify-content: center;">
+                        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+                            <table >
+                               <tr>
+                                   <td>
+                                       <label for="firstName">First Name</label>
+                                   </td>
+                                   <td>
+                                       <input type="text" id="firstName" formControlName="firstName">
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <label for="lastName">Last Name</label>
+   
+                                   </td>
+                                   <td>
+                                       <input type="text" id="lastName" formControlName="lastName">
+                                   </td>
+                               </tr>
+                                
+                               <tr>
+                                   <td>
+   
+                                     <label for="email">Email</label>
+                            
+                                   </td>
+                                   <td>
+                                       <input type="email" id="email" formControlName="email">
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                    
+                                       <label for="phone">Mobile No</label>
+                                      
+   
+                                   </td>
+                                   <td>
+                                       <input type="text" id="phone" formControlName="phone">
+                                   </td>
+                               </tr>
+   
+                               <tr>
+                                   <td>
+                                       <label for="password">Password</label>
+                                      
+                                      
+                                      
+   
+                                   </td>
+                                   <td>
+                                       <input type="password" id="password" formControlName="password">
+                                   </td>
+                               </tr>
+                               
+                            </table>
+                           <button style=" margin-left: 35%;  " type="submit" mat-raised-button color="primary" [disabled]="!registrationForm.valid">Register</button>
+                         </form>
+
+                    </div>
+                   
+                      
+                  
+                
+         
+               
+                   
+                   
+        </mat-card>
+    
+    </div>
+    
+</div>

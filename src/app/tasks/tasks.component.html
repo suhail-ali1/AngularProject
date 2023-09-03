@@ -1,0 +1,54 @@
+<div>
+    <h1 style="display: flex; justify-content: center; margin-top: 10px;"> <b>Your's {{tasktype}}</b>  </h1>
+   <button mat-raised-button color="primary"  data-toggle="modal" data-target="#myModal"  >Add Task</button> &nbsp;
+   <button mat-raised-button color="accent" (click)="enablingedit()" >{{buttonname}}</button>  
+</div>
+<div>
+        <div  *ngFor="let task of tasks">
+                <mat-card style="margin: 10px; background-color: azure;">
+                        <mat-card-header>
+                          <mat-card-title>{{task.id}}</mat-card-title>
+                          <mat-card-subtitle>{{task.taskname}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-actions align="end">
+                          <button  mat-button  *ngIf="enabledit" >Edit</button>
+                          <button mat-button *ngIf="enabledit">Delete</button>
+                        </mat-card-actions>
+                      </mat-card>
+                    
+                </div>
+            </div>
+    
+
+
+            <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Your Task</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Add Your Task</p>
+
+                    <input type="text" class="form-control" placeholder="Enter task " name="task" [(ngModel)]="addTaskValue">
+                    <button class="btn btn-outline-success" type="button" (click)="addTask()">Add</button>
+
+
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            
+              </div>
+            </div> 
+
+

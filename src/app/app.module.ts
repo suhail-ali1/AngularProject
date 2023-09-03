@@ -16,9 +16,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-import { ISROComponent } from './isro/isro.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import { HeaderComponent } from './header/header.component';
+import { MotivationalComponent } from './motivational/motivational.component';
+import { HomeComponent } from './home/home.component';
+import { CapitalizePipe } from './capitalize.pipe';
+import { TasksComponent } from './tasks/tasks.component';
+import { RegisterComponent } from './register/register.component';
 //import {MatButtonModule} from '@angular/material/button';
 
 //import {MatInputModule} from '@angular/material/input';
@@ -31,7 +36,12 @@ import {MatTableModule} from '@angular/material/table';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ISROComponent
+    HeaderComponent,
+    MotivationalComponent,
+    HomeComponent,
+    CapitalizePipe,
+    TasksComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
