@@ -40,7 +40,7 @@ export class LoginComponent {
   login()
   {
     console.log("btn clicked");
-    this.user = this.dataservice.getUserByemailid(this.emailid);
+    // this.user = this.dataservice.getUserByemailid(this.emailid);
     if(this.user === undefined)
     {
       this.incorrect = true;

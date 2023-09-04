@@ -15,7 +15,7 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     
-  this.dashboardData = this.dataservice.getDashboard();
+  // this.dashboardData = this.dataservice.getDashboard();
   }
 
 

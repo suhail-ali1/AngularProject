@@ -1,5 +1,11 @@
-export interface user 
+export class user 
 {
-    emailid : string ;
-    password : string;
+    userid : number = 0 ;
+    firstname ! : string;
+    lastname ! : string ;
+    email ! : string ;
+    mobile ! : string ;
+    password ! : string ;
+    DOB ! : string ;
+
 }

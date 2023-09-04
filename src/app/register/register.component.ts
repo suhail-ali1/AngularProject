@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { user } from '../Model/user.model';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-register',
@@ -8,12 +10,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
 
+ userObj : user = new user();
+
+ constructor(private service : DataService)
+ {}
+
   registrationForm =  new FormGroup(
       {
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phone : new FormControl('', Validators.required),
+      mobile : new FormControl('', Validators.required),
+      DOB : new FormControl('', Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
       }
   )
@@ -21,6 +29,19 @@ export class RegisterComponent {
   onSubmit() {
     
       console.log(this.registrationForm.value);
+      this.service.registerUser(this.registrationForm.value).subscribe(
+        (res) => {
+          console.log(res);
+        } , err => {
+           console.log(err);
+        });
+      
+      // this.userObj.DOB = this.registrationForm.get('DOB').value;
+      // this.userObj.email
+      // this.userObj.firstname
+      // this.userObj.lastname
+      // this.userObj.mobile
+      // this.userObj.password
     
   }
 
